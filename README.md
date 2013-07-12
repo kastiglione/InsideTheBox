@@ -21,18 +21,18 @@ With Inside The Box, you could write it as:
 })];
 ```
 
-Imagine you want to take the same array of numbers and format them,
-you would normally write:
+Imagine you want to take the same array of numbers and round them, you
+would normally write:
 
 ```objc
 [numbers map:^(NSNumber *number) {
-    return [NSString stringWithFormat:@"%.2f", number.floatValue];
+    return @(roundf(number.floatValue));
 });
 ```
 
 ```objc
 [numbers map:ITBRebox(^(float number) {
-    return [NSString stringWithFormat:@"%.2f", number];
+    return roundf(number);
 })];
 ```
 
