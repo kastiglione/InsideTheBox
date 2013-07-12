@@ -4,8 +4,8 @@ Convenient unboxing and reboxing of primtive types when using blocks.
 
 ## Examples
 
-Given an array of `NSNumber`s, and you want just the positive numbers,
-you might write:
+Given an collection of `NSNumber`s, and you want just the positive
+numbers, you might write:
 
 ```objc
 [numbers filter:^BOOL (NSNumber *number) {
@@ -16,13 +16,13 @@ you might write:
 With Inside The Box, you could write it as:
 
 ```objc
-[numbers filter:ITBUnbox(^BOOL (float number) {
+[numbers filter:ITBUnbox(^BOOL (CGFloat number) {
     return number > 0;
 })];
 ```
 
-Imagine you want to take the same array of numbers and round them, you
-would normally write:
+Imagine you want to take the same collection of numbers and round
+them, you would normally write:
 
 ```objc
 [numbers map:^(NSNumber *number) {
@@ -31,7 +31,7 @@ would normally write:
 ```
 
 ```objc
-[numbers map:ITBRebox(^(float number) {
+[numbers map:ITBRebox(^(CGFloat number) {
     return roundf(number);
 })];
 ```
@@ -42,11 +42,11 @@ The `ITBUnbox` and `ITBRebox` C functions are made possible through
 Clang's [`overloadable`](http://clang.llvm.org/docs/LanguageExtensions.html#function-overloading-in-c)
 attribute, which allows a single function to be overloaded and
 reimplemented for multiple input types. This library overloads
-`ITBUnbox` and `ITBRebox` for each possible pair of primtive types.
+`ITBUnbox` and `ITBRebox` for each in/out pair of primtive types.
 
 ## Supported Types
 
-Inside The Box supports automatic unboxing and boxing for the follow types:
+Inside The Box supports automatic unboxing and reboxing for the follow types:
 
 * `BOOL`
 * `char`
@@ -63,6 +63,7 @@ Inside The Box supports automatic unboxing and boxing for the follow types:
 * `double`
 * `NSInteger`
 * `NSUInteger`
+* `CGFloat`
 
 ## License
 
