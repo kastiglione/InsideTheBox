@@ -16,6 +16,13 @@
 		550B7A06178F92AD007953A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550B7A04178F92AD007953A5 /* InfoPlist.strings */; };
 		550B7A09178F92AD007953A5 /* InsideTheBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 550B7A08178F92AD007953A5 /* InsideTheBoxTests.m */; };
 		550B7A12178F92B5007953A5 /* InsideTheBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 550B79F2178F92AD007953A5 /* InsideTheBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		550B7A1B17907267007953A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550B7A1A17907267007953A5 /* Foundation.framework */; };
+		550B7A2917907268007953A5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550B79FB178F92AD007953A5 /* SenTestingKit.framework */; };
+		550B7A2B17907268007953A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550B7A2A17907268007953A5 /* UIKit.framework */; };
+		550B7A2C17907268007953A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550B7A1A17907267007953A5 /* Foundation.framework */; };
+		550B7A2F17907268007953A5 /* libInsideTheBox-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550B7A1917907267007953A5 /* libInsideTheBox-iOS.a */; };
+		550B7A3F179072C9007953A5 /* InsideTheBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 550B79F3178F92AD007953A5 /* InsideTheBox.m */; };
+		550B7A41179074CD007953A5 /* InsideTheBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 550B79F2178F92AD007953A5 /* InsideTheBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +33,26 @@
 			remoteGlobalIDString = 550B79E1178F92AD007953A5;
 			remoteInfo = InsideTheBox;
 		};
+		550B7A2D17907268007953A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 550B79D9178F92AD007953A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 550B7A1817907267007953A5;
+			remoteInfo = "InsideTheBox-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		550B7A1717907267007953A5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		550B79E2178F92AD007953A5 /* InsideTheBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InsideTheBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +73,12 @@
 		550B7A08178F92AD007953A5 /* InsideTheBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsideTheBoxTests.m; sourceTree = "<group>"; };
 		550B7A13178FB9CA007953A5 /* gencode.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = gencode.rb; sourceTree = "<group>"; };
 		550B7A14178FBAE2007953A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		550B7A1917907267007953A5 /* libInsideTheBox-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libInsideTheBox-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		550B7A1A17907267007953A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		550B7A1E17907267007953A5 /* InsideTheBox-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "InsideTheBox-iOS-Prefix.pch"; path = "InsideTheBox/InsideTheBox-iOS-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		550B7A2817907268007953A5 /* InsideTheBox-iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InsideTheBox-iOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		550B7A2A17907268007953A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		550B7A3217907268007953A5 /* InsideTheBox-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "InsideTheBox-iOSTests-Info.plist"; path = "InsideTheBoxTests/InsideTheBox-iOSTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +97,25 @@
 				550B79FC178F92AD007953A5 /* SenTestingKit.framework in Frameworks */,
 				550B79FD178F92AD007953A5 /* Cocoa.framework in Frameworks */,
 				550B7A00178F92AD007953A5 /* InsideTheBox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550B7A1617907267007953A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550B7A1B17907267007953A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550B7A2417907268007953A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550B7A2917907268007953A5 /* SenTestingKit.framework in Frameworks */,
+				550B7A2B17907268007953A5 /* UIKit.framework in Frameworks */,
+				550B7A2C17907268007953A5 /* Foundation.framework in Frameworks */,
+				550B7A2F17907268007953A5 /* libInsideTheBox-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +138,8 @@
 			children = (
 				550B79E2178F92AD007953A5 /* InsideTheBox.framework */,
 				550B79FA178F92AD007953A5 /* InsideTheBoxTests.octest */,
+				550B7A1917907267007953A5 /* libInsideTheBox-iOS.a */,
+				550B7A2817907268007953A5 /* InsideTheBox-iOSTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +149,8 @@
 			children = (
 				550B79E5178F92AD007953A5 /* Cocoa.framework */,
 				550B79FB178F92AD007953A5 /* SenTestingKit.framework */,
+				550B7A1A17907267007953A5 /* Foundation.framework */,
+				550B7A2A17907268007953A5 /* UIKit.framework */,
 				550B79E7178F92AD007953A5 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -128,6 +183,8 @@
 				550B79ED178F92AD007953A5 /* InsideTheBox-Info.plist */,
 				550B79EE178F92AD007953A5 /* InfoPlist.strings */,
 				550B79F1178F92AD007953A5 /* InsideTheBox-Prefix.pch */,
+				550B7A1E17907267007953A5 /* InsideTheBox-iOS-Prefix.pch */,
+				550B7A3217907268007953A5 /* InsideTheBox-iOSTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -159,6 +216,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				550B7A12178F92B5007953A5 /* InsideTheBox.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550B7A40179074C9007953A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550B7A41179074CD007953A5 /* InsideTheBox.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +267,43 @@
 			productReference = 550B79FA178F92AD007953A5 /* InsideTheBoxTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		550B7A1817907267007953A5 /* InsideTheBox-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550B7A3917907268007953A5 /* Build configuration list for PBXNativeTarget "InsideTheBox-iOS" */;
+			buildPhases = (
+				550B7A1517907267007953A5 /* Sources */,
+				550B7A1617907267007953A5 /* Frameworks */,
+				550B7A1717907267007953A5 /* CopyFiles */,
+				550B7A40179074C9007953A5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InsideTheBox-iOS";
+			productName = "InsideTheBox-iOS";
+			productReference = 550B7A1917907267007953A5 /* libInsideTheBox-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		550B7A2717907268007953A5 /* InsideTheBox-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550B7A3C17907268007953A5 /* Build configuration list for PBXNativeTarget "InsideTheBox-iOSTests" */;
+			buildPhases = (
+				550B7A2317907268007953A5 /* Sources */,
+				550B7A2417907268007953A5 /* Frameworks */,
+				550B7A2517907268007953A5 /* Resources */,
+				550B7A2617907268007953A5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				550B7A2E17907268007953A5 /* PBXTargetDependency */,
+			);
+			name = "InsideTheBox-iOSTests";
+			productName = "InsideTheBox-iOSTests";
+			productReference = 550B7A2817907268007953A5 /* InsideTheBox-iOSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,6 +327,8 @@
 			targets = (
 				550B79E1178F92AD007953A5 /* InsideTheBox */,
 				550B79F9178F92AD007953A5 /* InsideTheBoxTests */,
+				550B7A1817907267007953A5 /* InsideTheBox-iOS */,
+				550B7A2717907268007953A5 /* InsideTheBox-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,10 +350,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		550B7A2517907268007953A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		550B79F8178F92AD007953A5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		550B7A2617907268007953A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +405,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		550B7A1517907267007953A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550B7A3F179072C9007953A5 /* InsideTheBox.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550B7A2317907268007953A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -288,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = 550B79E1178F92AD007953A5 /* InsideTheBox */;
 			targetProxy = 550B79FE178F92AD007953A5 /* PBXContainerItemProxy */;
+		};
+		550B7A2E17907268007953A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 550B7A1817907267007953A5 /* InsideTheBox-iOS */;
+			targetProxy = 550B7A2D17907268007953A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -426,6 +570,72 @@
 			};
 			name = Release;
 		};
+		550B7A3A17907268007953A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/InsideTheBox_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InsideTheBox/InsideTheBox-iOS-Prefix.pch";
+				INSTALL_PATH = "include/$(PROJECT_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		550B7A3B17907268007953A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/InsideTheBox_iOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InsideTheBox/InsideTheBox-iOS-Prefix.pch";
+				INSTALL_PATH = "include/$(PROJECT_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		550B7A3D17907268007953A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InsideTheBox/InsideTheBox-iOS-Prefix.pch";
+				INFOPLIST_FILE = "InsideTheBoxTests/InsideTheBox-iOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		550B7A3E17907268007953A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InsideTheBox/InsideTheBox-iOS-Prefix.pch";
+				INFOPLIST_FILE = "InsideTheBoxTests/InsideTheBox-iOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +661,22 @@
 			buildConfigurations = (
 				550B7A10178F92AD007953A5 /* Debug */,
 				550B7A11178F92AD007953A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		550B7A3917907268007953A5 /* Build configuration list for PBXNativeTarget "InsideTheBox-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550B7A3A17907268007953A5 /* Debug */,
+				550B7A3B17907268007953A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		550B7A3C17907268007953A5 /* Build configuration list for PBXNativeTarget "InsideTheBox-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550B7A3D17907268007953A5 /* Debug */,
+				550B7A3E17907268007953A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
