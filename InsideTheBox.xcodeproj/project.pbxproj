@@ -46,6 +46,7 @@
 		550B7A07178F92AD007953A5 /* InsideTheBoxTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsideTheBoxTests.h; sourceTree = "<group>"; };
 		550B7A08178F92AD007953A5 /* InsideTheBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsideTheBoxTests.m; sourceTree = "<group>"; };
 		550B7A13178FB9CA007953A5 /* gencode.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = gencode.rb; sourceTree = "<group>"; };
+		550B7A14178FBAE2007953A5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 		550B79D8178F92AD007953A5 = {
 			isa = PBXGroup;
 			children = (
+				550B7A14178FBAE2007953A5 /* README.md */,
 				550B79EB178F92AD007953A5 /* InsideTheBox */,
 				550B7A01178F92AD007953A5 /* InsideTheBoxTests */,
 				550B79E4178F92AD007953A5 /* Frameworks */,
