@@ -36,6 +36,26 @@ would normally write:
 })];
 ```
 
+## Supported Types
+
+Inside The Box supports automatic unboxing and boxing for the follow types:
+
+* `BOOL`
+* `char`
+* `unsigned char`
+* `short`
+* `unsigned short`
+* `int`
+* `unsigned int`
+* `long`
+* `unsigned long`
+* `long long`
+* `unsigned long long`
+* `float`
+* `double`
+* `NSInteger`
+* `NSUInteger`
+
 ## License
 
 Inside The Box is released under the MIT License. See LICENSE.txt.
