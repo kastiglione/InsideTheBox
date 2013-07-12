@@ -36,6 +36,14 @@ would normally write:
 })];
 ```
 
+## How It Works
+
+The `ITBUnbox` and `ITBRebox` C functions are made possible through
+Clang's [`overloadable`](http://clang.llvm.org/docs/LanguageExtensions.html#function-overloading-in-c)
+attribute, which allows a single function to be overloaded and
+reimplemented for multiple input types. This library overloads
+`ITBUnbox` and `ITBRebox` for each possible pair of primtive types.
+
 ## Supported Types
 
 Inside The Box supports automatic unboxing and boxing for the follow types:
