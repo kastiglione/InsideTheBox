@@ -1,6 +1,6 @@
 # Inside The Box
 
-Convenient unboxing and reboxing primtive types when using blocks.
+Convenient unboxing and reboxing of primtive types when using blocks.
 
 ## Examples
 
