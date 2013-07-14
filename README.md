@@ -64,6 +64,13 @@ Inside The Box supports automatic unboxing and reboxing for the follow types:
 * `NSInteger`
 * `NSUInteger`
 * `CGFloat`
+* `NSRange`
+* `NSRect` (OS X)
+* `NSSize` (OS X)
+* `NSPoint` (OS X)
+* `CGRect` (iOS)
+* `CGSize` (iOS)
+* `CGPoint` (iOS)
 
 ## License
 

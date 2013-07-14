@@ -1,6 +1,36 @@
 #!/usr/bin/env ruby
 
-NumberBox = Struct.new(:type, :unbox_method)
+class NumberBox < Struct.new(:type, :unbox_method)
+  def unbox(expression)
+    "[#{expression} #{unbox_method}]"
+  end
+
+  def box(expression)
+    "@(#{expression})"
+  end
+
+  def os
+    [:osx, :ios]
+  end
+
+  def compatible_with(other)
+    (os & other.os).size > 0
+  end
+end
+
+class StructBox < Struct.new(:type, :unbox_method, :box_method, :os)
+  def unbox(expression)
+    "[#{expression} #{unbox_method}]"
+  end
+
+  def box(expression)
+    "[NSValue #{box_method}:#{expression}]"
+  end
+
+  def compatible_with(other)
+    (os & other.os).size > 0
+  end
+end
 
 types = [
   NumberBox.new('BOOL', 'boolValue'),
@@ -16,10 +46,25 @@ types = [
   NumberBox.new('unsigned long long', 'unsignedLongLongValue'),
   NumberBox.new('float', 'floatValue'),
   NumberBox.new('double', 'doubleValue'),
+
   # Clang errors when overloading both these and their typedef originals.
   # Yet clang does permit both BOOL and unsigned char, go figure.
   # NumberBox.new('NSInteger', 'integerValue'),
   # NumberBox.new('NSUInteger', 'unsignedIntegerValue'),
+
+  StructBox.new('NSRange', 'rangeValue', 'valueWithRange', [:ios, :osx]),
+
+  # OS X
+
+  StructBox.new('NSPoint', 'pointValue', 'valueWithPoint', [:osx]),
+  StructBox.new('NSRect', 'rectValue', 'valueWithRect', [:osx]),
+  StructBox.new('NSSize', 'sizeValue', 'valueWithSize', [:osx]),
+
+  # iOS
+
+  StructBox.new('CGPoint', 'CGPointValue', 'valueWithCGPoint', [:ios]),
+  StructBox.new('CGRect', 'CGRectValue', 'valueWithCGRect', [:ios]),
+  StructBox.new('CGSize', 'CGSizeValue', 'valueWithCGSize', [:ios]),
 ]
 
 def prototype(input, output, options)
@@ -29,22 +74,44 @@ end
 
 def implementation(input, output, options)
   rebox = options[:rebox]
-  return_expression = (rebox ? '@(%s)' : '%s') % "block([boxed #{input.unbox_method}])"
+  result = "block(#{input.unbox('boxed')})"
+  result = "#{output.box(result)}" if rebox
   prototype(input, output, options) + %" {
 \treturn ^(id boxed) {
-\t\treturn #{return_expression};
+\t\treturn #{result};
 \t};
-}\n\n"
+}\n"
+end
+
+def target(input, output)
+  case (input.os & output.os)
+  when [:osx, :ios]
+    nil
+  when [:osx]
+    'TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)'
+  when [:ios]
+    'TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR'
+  end
 end
 
 File.open('InsideTheBox.h', 'w') do |f|
   f.puts "// Generated code, see #{__FILE__}\n\n"
   types.each do |output|
     types.each do |input|
-      f.print prototype(input, output, rebox: false), ";\n"
+      if input.compatible_with(output)
+        target = target(input, output)
+        f.puts "#if #{target}" if target
+        f.print prototype(input, output, rebox: false), ";\n"
+        f.puts "#endif" if target
+      end
     end
     types.each do |input|
-      f.print prototype(input, output, rebox: true), ";\n"
+      if input.compatible_with(output)
+        target = target(input, output)
+        f.puts "#if #{target}" if target
+        f.print prototype(input, output, rebox: true), ";\n"
+        f.puts "#endif" if target
+      end
     end
     f.puts # section break
   end
@@ -54,10 +121,22 @@ File.open('InsideTheBox.m', 'w') do |f|
   f.puts "// Generated code, see #{__FILE__}\n\n"
   types.each do |output|
     types.each do |input|
-      f.puts implementation(input, output, rebox: false)
+      if input.compatible_with(output)
+        target = target(input, output)
+        f.puts "#if #{target}" if target
+        f.puts implementation(input, output, rebox: false)
+        f.puts "#endif" if target
+        f.puts
+      end
     end
     types.each do |input|
-      f.puts implementation(input, output, rebox: true)
+      if input.compatible_with(output)
+        target = target(input, output)
+        f.puts "#if #{target}" if target
+        f.puts implementation(input, output, rebox: true)
+        f.puts "#endif" if target
+        f.puts
+      end
     end
     f.puts "#pragma mark #{output.type}\n\n"
   end
