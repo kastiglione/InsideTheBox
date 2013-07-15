@@ -1,6 +1,7 @@
 # Inside The Box
 
-Convenient unboxing and reboxing of primtive types when using blocks.
+Convenient unboxing and reboxing of primitive types and structs, when
+using signle value blocks.
 
 ## Examples
 
@@ -36,13 +37,32 @@ them, you would normally write:
 })];
 ```
 
+For an example using structs, imagine you have a collection of
+`CGRect`s, and you want to map the frames' center points. Before:
+
+```objc
+[frames map:^(NSValue *frame) {
+    CGRect rect = frame.CGRectValue;
+    CGPoint mid = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
+    return [NSValue valueWithCGPoint:mid];
+}];
+```
+
+After:
+
+```objc
+[frames map:ITBRebox(^(CGRect frame) {
+    return CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+})];
+```
+
 ## How It Works
 
 The `ITBUnbox` and `ITBRebox` C functions are made possible through
 Clang's [`overloadable`](http://clang.llvm.org/docs/LanguageExtensions.html#function-overloading-in-c)
 attribute, which allows a single function to be overloaded and
 reimplemented for multiple input types. This library overloads
-`ITBUnbox` and `ITBRebox` for each in/out pair of primtive types.
+`ITBUnbox` and `ITBRebox` for each in/out pair types.
 
 ## Supported Types
 
