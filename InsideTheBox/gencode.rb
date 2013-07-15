@@ -120,6 +120,7 @@ end
 File.open('InsideTheBox.m', 'w') do |f|
   f.puts "// Generated code, see #{__FILE__}\n\n"
   types.each do |output|
+    f.puts "#pragma mark #{output.type}\n\n"
     types.each do |input|
       if input.compatible_with(output)
         target = target(input, output)
@@ -138,6 +139,5 @@ File.open('InsideTheBox.m', 'w') do |f|
         f.puts
       end
     end
-    f.puts "#pragma mark #{output.type}\n\n"
   end
 end

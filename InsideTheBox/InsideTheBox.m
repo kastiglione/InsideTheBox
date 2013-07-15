@@ -1,5 +1,7 @@
 // Generated code, see gencode.rb
 
+#pragma mark BOOL
+
 BOOL __attribute__((overloadable)) (^ITBUnbox(BOOL (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
 		return block([boxed boolValue]);
@@ -264,7 +266,7 @@ id __attribute__((overloadable)) (^ITBRebox(BOOL (^block)(CGSize unboxed)))(id) 
 }
 #endif
 
-#pragma mark BOOL
+#pragma mark char
 
 char __attribute__((overloadable)) (^ITBUnbox(char (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -530,7 +532,7 @@ id __attribute__((overloadable)) (^ITBRebox(char (^block)(CGSize unboxed)))(id) 
 }
 #endif
 
-#pragma mark char
+#pragma mark unsigned char
 
 unsigned char __attribute__((overloadable)) (^ITBUnbox(unsigned char (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -796,7 +798,7 @@ id __attribute__((overloadable)) (^ITBRebox(unsigned char (^block)(CGSize unboxe
 }
 #endif
 
-#pragma mark unsigned char
+#pragma mark short
 
 short __attribute__((overloadable)) (^ITBUnbox(short (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -1062,7 +1064,7 @@ id __attribute__((overloadable)) (^ITBRebox(short (^block)(CGSize unboxed)))(id)
 }
 #endif
 
-#pragma mark short
+#pragma mark unsigned short
 
 unsigned short __attribute__((overloadable)) (^ITBUnbox(unsigned short (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -1328,7 +1330,7 @@ id __attribute__((overloadable)) (^ITBRebox(unsigned short (^block)(CGSize unbox
 }
 #endif
 
-#pragma mark unsigned short
+#pragma mark int
 
 int __attribute__((overloadable)) (^ITBUnbox(int (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -1594,7 +1596,7 @@ id __attribute__((overloadable)) (^ITBRebox(int (^block)(CGSize unboxed)))(id) {
 }
 #endif
 
-#pragma mark int
+#pragma mark unsigned int
 
 unsigned int __attribute__((overloadable)) (^ITBUnbox(unsigned int (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -1860,7 +1862,7 @@ id __attribute__((overloadable)) (^ITBRebox(unsigned int (^block)(CGSize unboxed
 }
 #endif
 
-#pragma mark unsigned int
+#pragma mark long
 
 long __attribute__((overloadable)) (^ITBUnbox(long (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -2126,7 +2128,7 @@ id __attribute__((overloadable)) (^ITBRebox(long (^block)(CGSize unboxed)))(id) 
 }
 #endif
 
-#pragma mark long
+#pragma mark unsigned long
 
 unsigned long __attribute__((overloadable)) (^ITBUnbox(unsigned long (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -2392,7 +2394,7 @@ id __attribute__((overloadable)) (^ITBRebox(unsigned long (^block)(CGSize unboxe
 }
 #endif
 
-#pragma mark unsigned long
+#pragma mark long long
 
 long long __attribute__((overloadable)) (^ITBUnbox(long long (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -2658,7 +2660,7 @@ id __attribute__((overloadable)) (^ITBRebox(long long (^block)(CGSize unboxed)))
 }
 #endif
 
-#pragma mark long long
+#pragma mark unsigned long long
 
 unsigned long long __attribute__((overloadable)) (^ITBUnbox(unsigned long long (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -2924,7 +2926,7 @@ id __attribute__((overloadable)) (^ITBRebox(unsigned long long (^block)(CGSize u
 }
 #endif
 
-#pragma mark unsigned long long
+#pragma mark float
 
 float __attribute__((overloadable)) (^ITBUnbox(float (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -3190,7 +3192,7 @@ id __attribute__((overloadable)) (^ITBRebox(float (^block)(CGSize unboxed)))(id)
 }
 #endif
 
-#pragma mark float
+#pragma mark double
 
 double __attribute__((overloadable)) (^ITBUnbox(double (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -3456,7 +3458,7 @@ id __attribute__((overloadable)) (^ITBRebox(double (^block)(CGSize unboxed)))(id
 }
 #endif
 
-#pragma mark double
+#pragma mark NSRange
 
 NSRange __attribute__((overloadable)) (^ITBUnbox(NSRange (^block)(BOOL unboxed)))(id) {
 	return ^(id boxed) {
@@ -3722,7 +3724,7 @@ id __attribute__((overloadable)) (^ITBRebox(NSRange (^block)(CGSize unboxed)))(i
 }
 #endif
 
-#pragma mark NSRange
+#pragma mark NSPoint
 
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
 NSPoint __attribute__((overloadable)) (^ITBUnbox(NSPoint (^block)(BOOL unboxed)))(id) {
@@ -3996,7 +3998,7 @@ id __attribute__((overloadable)) (^ITBRebox(NSPoint (^block)(NSSize unboxed)))(i
 }
 #endif
 
-#pragma mark NSPoint
+#pragma mark NSRect
 
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
 NSRect __attribute__((overloadable)) (^ITBUnbox(NSRect (^block)(BOOL unboxed)))(id) {
@@ -4270,7 +4272,7 @@ id __attribute__((overloadable)) (^ITBRebox(NSRect (^block)(NSSize unboxed)))(id
 }
 #endif
 
-#pragma mark NSRect
+#pragma mark NSSize
 
 #if TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
 NSSize __attribute__((overloadable)) (^ITBUnbox(NSSize (^block)(BOOL unboxed)))(id) {
@@ -4544,7 +4546,7 @@ id __attribute__((overloadable)) (^ITBRebox(NSSize (^block)(NSSize unboxed)))(id
 }
 #endif
 
-#pragma mark NSSize
+#pragma mark CGPoint
 
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 CGPoint __attribute__((overloadable)) (^ITBUnbox(CGPoint (^block)(BOOL unboxed)))(id) {
@@ -4818,7 +4820,7 @@ id __attribute__((overloadable)) (^ITBRebox(CGPoint (^block)(CGSize unboxed)))(i
 }
 #endif
 
-#pragma mark CGPoint
+#pragma mark CGRect
 
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 CGRect __attribute__((overloadable)) (^ITBUnbox(CGRect (^block)(BOOL unboxed)))(id) {
@@ -5092,7 +5094,7 @@ id __attribute__((overloadable)) (^ITBRebox(CGRect (^block)(CGSize unboxed)))(id
 }
 #endif
 
-#pragma mark CGRect
+#pragma mark CGSize
 
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 CGSize __attribute__((overloadable)) (^ITBUnbox(CGSize (^block)(BOOL unboxed)))(id) {
@@ -5365,6 +5367,4 @@ id __attribute__((overloadable)) (^ITBRebox(CGSize (^block)(CGSize unboxed)))(id
 	};
 }
 #endif
-
-#pragma mark CGSize
 
