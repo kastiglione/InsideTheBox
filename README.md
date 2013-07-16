@@ -1,7 +1,7 @@
 # Inside The Box
 
 Convenient unboxing and reboxing of primitive types and structs, when
-using signle value blocks.
+using single value blocks.
 
 ## Examples
 
